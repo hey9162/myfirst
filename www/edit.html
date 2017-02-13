@@ -1,0 +1,47 @@
+<form ng-controller="editController" name="form" ng-submit="save()" novalidate>
+    <div>姓名：</div>
+    <div>
+        <input type="text" ng-model="card.name" name="name" required ng-maxlength="8" autofocus placeholder="请输入姓名">
+        <i class="icon-ok-sign" ng-show="form.name.$vilid && form.name.$dirty"></i>
+        <i class="icon-remove-sign" ng-show="form.name.$invalid && form.name.$dirty" title="姓名不能超过8个字符！"></i>
+    </div>
+    <div>职位：</div>
+    <div>
+        <input type="text" ng-model="card.title" name="title" required ng-maxlength="12" placeholder="请输入职位">
+        <i class="icon-ok-sign" ng-show="form.title.$valid && form.title.$dirty"></i>
+        <i class="icon-remove-sign" ng-show="form.title.$invalid && form.title.$dirty" title="职位不能超过12个字符！"></i>
+    </div>
+    <div>地址：</div>
+    <div>
+        <input type="text" ng-model="card.address" name="address" required ng-maxlength="20" placeholder="请输入详细地址">
+        <i class="icon-ok-sign" ng-show="form.address.$valid && form.address.$dirty" ></i>
+        <i class="icon-remove-sign" ng-show="form.address.$invalid && form.address.$dirty" title="地址不能超过20个字符！"></i>
+    </div>
+    <div>手机号：</div>
+    <div>
+        <input type="tel" ng-model="card.phone" name="phone" ng-pattern="'1[3578][0-9]{9}'" required placeholder="请输入手机号">
+        <i class="icon-ok-sign" ng-show="form.phone.$valid && form.phone.$dirty"></i>
+        <i class="icon-remove-sign" ng-show="form.phone.$invalid && form.phone.$dirty" title="手机号格式不正确！"></i>
+    </div>
+    <div>QQ号：</div>
+    <div>
+        <input type="tel" ng-model="card.qq" name="qq" required ng-pattern="'[1-9][0-9]{5,10}'" placeholder="请输入QQ号">
+        <i class="icon-ok-sign" ng-show="form.qq.$valid && form.qq.$dirty"></i>
+        <i class="icon-remove-sign"  ng-show="form.qq.$invalid && form.qq.$dirty" title="QQ号格式不正确！"></i>
+    </div>
+    <div>电子邮箱：</div>
+    <div>
+        <input type="email" ng-model="card.email" name="email" required placeholder="请输入电子邮箱地址">
+        <i class="icon-ok-sign" ng-show="form.email.$valid && form.email.$dirty"></i>
+        <i class="icon-remove-sign" ng-show="form.email.$invalid && form.email.$dirty" title="电子邮箱格式不正确！"></i>
+    </div>
+    <div>介绍：</div>
+    <div>
+        <textarea ng-model="card.description" name="description" required ng-maxlength="100" placeholder="请输入个人简介"></textarea>
+        <i class="icon-ok-sign" ng-show="form.description.$valid && form.description.$dirty"></i>
+        <i class="icon-remove-sign"  ng-show="form.description.$invalid && form.description.$dirty" title="个人简介不能超过100个字符！"></i>
+    </div>
+    <div>
+        <input type="submit" ng-disabled="form.$invalid" value="保存">
+    </div>
+</form>
